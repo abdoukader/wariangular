@@ -1,0 +1,73 @@
+<div class="row pt-5">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">register</h3>
+      </div>
+      <div class="card-bady">
+        <form class="form">
+          <div class="row">
+            <div class="col">
+                <label for="">username</label>
+              <input type="text" class="form-control" placeholder="username">
+            </div>
+            <div class="col">
+                <label for="">password</label>
+              <input type="text" class="form-control" placeholder="password">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="">nom</label>
+              <input type="text" class="form-control" placeholder="nom">
+            </div>
+            <div class="col">
+                <label for="">prenom</label>
+              <input type="text" class="form-control" placeholder="prenom">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="">mail</label>
+              <input type="text" class="form-control" placeholder="mail">
+            </div>
+            <div class="col">
+                <label for="">adresse</label>
+              <input type="text" class="form-control" placeholder="adresse">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <label for="">statut</label>
+              <input type="text" class="form-control" placeholder="statut">
+            </div>
+            <div class="col">
+                <label for="">ninea</label>
+              <input type="text" class="form-control" placeholder="ninea">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <label for="">profil</label>
+                <input type="text" class="form-control" placeholder="profil">
+              </div>
+              <div class="custom-file">
+                  <label for="">image</label>
+                  <input id="newMembreImage" name="newMembreImage" type="file" class="file-loading" ng-model="newMembreImage" required />
+                  <input type="file" class="custom-file-input" id="customFile">
+                  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">tel</label>
+                  <input type="text" class="form-control" placeholder="tel">
+                </div>
+              </div>
+              <br>
+              <button (click)="registerUser()" type="submit" class="btn btn-primary">ajouter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
