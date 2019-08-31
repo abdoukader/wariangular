@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+      <th scope="col">ID</th>
+      <th scope="col">Nom Entreprise</th>
+      <th scope="col">Ninea</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Email</th>
+      <th scope="col">Téléphone</th>
+      <th scope="col">Raison Social</th>
+  </thead>
+  <tbody>
+      <tr  *ngFor ="let partenaires of partenaire">
+          <td>{{partenaires.id}}</td>
+          <td>{{partenaires.nomentreprise}}</td>
+          <td>{{partenaires.ninea}}</td>
+          <td>{{partenaires.adresse}}</td>
+          <td>{{partenaires.email}}</td>
+          <td>{{partenaires.telephone}}</td>
+          <td>{{partenaires.raisonsocial}}</td>
+      </tr>
+  </tbody>
+</table>

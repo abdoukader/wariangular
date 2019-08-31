@@ -2,19 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { HttpHeaders} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+ 
   private _loginUrl = "http://localhost:8000/api/login"
   private _registerUrl = "http://localhost:8000/api/register"
   jwt:string;
   username:string;
   roles:string;
+  headers: HttpHeaders | { [header: string]: string | string[]; };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _router: Router) { }
 
   // registerUser(user){
   //   return this.http.post<any>(this._registerUrl, user)
@@ -37,6 +40,7 @@ export class AuthService {
       this.username=objJWT.username;
       this.roles=objJWT.roles;
       console.log(this.roles)
+      console.log(this.username)
     }
     
     isSuperAdmin(){
@@ -57,9 +61,17 @@ export class AuthService {
     }
   
   registerUser(user) {
-    return this.http.post<{access_token:  string}>(this._registerUrl, user).pipe(tap(res => {
+    return this.http.post<{jwt:  string}>(this._registerUrl, user,{headers:this.headers}).pipe(tap(res => {
     this.loginUser(user)
     }))
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
+  }
+
+  public get loggedIn(): boolean{
+    return localStorage.getItem('access_token') !==  null;
   }
 
   // loginUser(user) {
