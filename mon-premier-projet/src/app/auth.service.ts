@@ -12,6 +12,8 @@ export class AuthService {
  
   private _loginUrl = "http://localhost:8000/api/login"
   private _registerUrl = "http://localhost:8000/api/register"
+  private _partenaireUrl = "http://localhost:8000/api/partenaires"
+
   jwt:string;
   username:string;
   roles:string;
@@ -28,6 +30,7 @@ export class AuthService {
        
     }))
   }
+  
   saveToken(jwt:string){
     localStorage.setItem('access_token', jwt);
     this.jwt=jwt;
@@ -62,6 +65,12 @@ export class AuthService {
   
   registerUser(user) {
     return this.http.post<{jwt:  string}>(this._registerUrl, user,{headers:this.headers}).pipe(tap(res => {
+    this.loginUser(user)
+    }))
+  }
+
+  registerPartenaire(user) {
+    return this.http.post<{jwt:  string}>(this._partenaireUrl, user,{headers:this.headers}).pipe(tap(res => {
     this.loginUser(user)
     }))
   }

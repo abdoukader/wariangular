@@ -1,21 +1,24 @@
-<div class="row pt-5">
-  <div class="col-md-6 max-auto">
-    <div class="card rounded-0">
-      <div class="card-header">
-        <h3 class="mb-0">Login</h3>
-      </div>
-      <div class="card-body">
-        <form class="form">
-          <div class="form group">
-            <label for="">username</label>
-              <input [(ngModel)]="loginUserData.username" name="username" type="text" class="form-control rounded-0" required>
-          </div>
-          <div class="form-group">
-            <label for="">Password</label>
-              <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required>
-          </div>
-          <button (click)="loginUser()" type="button" class="btn btn-primary mb-2 float-right">Register</button>
-        </form>
+<div id="formule">
+  <div class="">
+    <div class="col-md-6 max-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h6 class="mb-0">Login</h6>
+        </div>
+        <div class="card-body">
+          <form class="form">
+            <img src="assets/warii.png" alt="">
+            <div class="form group">
+              <label for="">username</label>
+                <input [(ngModel)]="loginUserData.username" name="username" type="text" class="form-control rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+                <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required>
+            </div>
+            <button (click)="loginUser()" type="button" class="btn btn-primary mb-2 float-right">Connexion</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

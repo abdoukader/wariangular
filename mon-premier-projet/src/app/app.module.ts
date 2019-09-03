@@ -13,6 +13,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
+import { AjoutPartenaireService} from './ajout-partenaire.service';
+
 
 // import { Interceptor } from './interceptor';
 // import { TokenIterceptorservice, TokenInterceptorService } from './token-interceptor.service';
@@ -41,7 +43,7 @@ import { UserService } from './user.service';
       }
     })
   ],
-  providers: [AuthService,UserService,
+  providers: [AuthService,UserService,AjoutPartenaireService,
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
 
   ],
