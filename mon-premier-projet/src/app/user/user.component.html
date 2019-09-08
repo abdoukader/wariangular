@@ -6,16 +6,18 @@
       <th scope="col">prenom</th>
       <th scope="col">Tel</th>
       <th scope="col">mail</th>
-      <th scope="col">adresse</th><!
+      <th scope="col">statut</th>
+      <th scope="col">adresse</th>
   </thead>
   <tbody >
-        <tr  *ngFor ="let user of users">
+        <tr *ngFor ="let user of users">
           <td>{{user.username}}</td>
           <td>{{user.roles}}</td>
           <td>{{user.nom}}</td>
           <td>{{user.prenom}}</td>
           <td>{{user.tel}}</td>
           <td>{{user.mail}}</td>
+          <td>{{user.statut}}</td>
           <td>{{user.adresse}}</td>
       </tr>
   </tbody>

@@ -41,4 +41,11 @@ export class UserService {
     formData.append('tel', tel)
     return this.http.post(endpoint, formData,this.headers);
   }
+
+  monitor(id){
+
+    const   _bloquerUser= 'http://localhost:8000/api/bloquer/'+id;
+  
+      return this.http.get(_bloquerUser) 
+    }
 }

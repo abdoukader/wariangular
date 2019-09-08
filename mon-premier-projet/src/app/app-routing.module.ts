@@ -4,12 +4,17 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { PartenaireComponent} from './partenaire/partenaire.component';
+import { TemplateComponent } from './template/template.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo: '/login',
+    redirectTo: '/register',
     pathMatch: 'full'
+  },
+  {
+    path: 'template',
+    component: TemplateComponent
   },
   {
     path: 'register',

@@ -8,7 +8,7 @@ export class AjoutPartenaireService {
   constructor(private http: HttpClient) { }
   headers = {headers: new HttpHeaders().set("authorization", "Bearer "+ localStorage.getItem('access_token'))};
   
-  postFile(
+  postFile1(
       username:string,
       password:string,
       nom:string,
@@ -21,7 +21,7 @@ export class AjoutPartenaireService {
       imageName:File,
       tel:string
   ) {
-    const endpoint = 'http://127.0.0.1:8000/api/register';
+    const endpoint = 'http://127.0.0.1:8000/api/partenaires';
     const formData: FormData = new FormData();
 
 
@@ -37,5 +37,17 @@ export class AjoutPartenaireService {
     formData.append('imageName', imageName, imageName.name);
     formData.append('tel', tel)
     return this.http.post(endpoint, formData,this.headers);
+  }
+
+
+  compteFile(
+    somme:string,
+  ){
+    const endpoint = 'http://127.0.0.1:8000/api/depot';
+    const formData: FormData = new FormData();
+    
+    formData.append('somme', somme)
+    return this.http.post(endpoint, formData,this.headers);
+
   }
 }

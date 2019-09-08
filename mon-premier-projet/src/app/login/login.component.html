@@ -1,25 +1,25 @@
-<div id="formule">
-  <div class="">
-    <div class="col-md-6 max-auto">
-      <div class="card rounded-0">
-        <div class="card-header">
-          <h6 class="mb-0">Login</h6>
-        </div>
-        <div class="card-body">
-          <form class="form">
-            <img src="assets/warii.png" alt="">
-            <div class="form group">
-              <label for="">username</label>
+<div class="page login-page">
+    <div class="container">
+      <div class="form-outer text-center d-flex align-items-center">
+        <div class="form-inner">
+          <div class="logo text-uppercase"><span>TRANSFERT</span><strong class="text-primary">WARI</strong></div>
+          <p>Les services de transfert d'argent: approche comparative des services offerts</p>
+          <form method="get" class="text-left form-validate">
+              <img src="assets/warii.png" alt="" class="img mb-4">
+            <div class="form-group-material">
                 <input [(ngModel)]="loginUserData.username" name="username" type="text" class="form-control rounded-0" required>
+              <label for="login-username" class="label-material">Username</label>
             </div>
-            <div class="form-group">
-              <label for="">Password</label>
+            <div class="form-group-material">
                 <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required>
+              <label for="login-password" class="label-material">Password</label>
             </div>
-            <button (click)="loginUser()" type="button" class="btn btn-primary mb-2 float-right">Connexion</button>
+            <div class="form-group text-center">
+              <button (click)="loginUser()" type="button" class="btn btn-primary mb-2 float-right">Connexion</button>
+              <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-</div>

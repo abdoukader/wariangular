@@ -77,6 +77,8 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('access_token');
+    this._router.navigate(['/login'])
+
   }
 
   public get loggedIn(): boolean{

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { ListeService } from '../liste.service';
 import { AjoutPartenaireService } from '../ajout-partenaire.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-partenaire',
@@ -14,10 +15,17 @@ export class PartenaireComponent implements OnInit {
   imageUrl: string = "/assets/wari.jpeg";
   fileToUpload: File = null;
 
-  constructor(private _auth: AuthService,private ajoutPartService: AjoutPartenaireService ,private _router: Router) { }
+  constructor(private _auth1: ListeService,private _auth: AuthService, private ajoutPartService: AjoutPartenaireService ,private _router: Router) { }
 
   ngOnInit() {
-    
+     
+    this._auth1.getPartenaire()
+    .subscribe(res =>  {
+        this.partenaire = res
+        console.log(res)
+      },
+      err => console.log(err)
+    );
   }
   registerPartenaire(){
     this._auth.registerPartenaire(this.ajoutPartService)
@@ -42,7 +50,7 @@ export class PartenaireComponent implements OnInit {
   }
 
   OnSubmit(username,password,nom,prenom,mail,adresse,statut,ninea,profil,imageName,tel){
-    this.ajoutPartService.postFile(
+    this.ajoutPartService.postFile1(
       username.value,
       password.value,
       nom.value,

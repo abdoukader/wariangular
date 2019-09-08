@@ -14,6 +14,7 @@ import { PartenaireComponent } from './partenaire/partenaire.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
 import { AjoutPartenaireService} from './ajout-partenaire.service';
+import { TemplateComponent } from './template/template.component';
 
 
 // import { Interceptor } from './interceptor';
@@ -26,7 +27,8 @@ import { AjoutPartenaireService} from './ajout-partenaire.service';
     RegisterComponent,
     LoginComponent,
     PartenaireComponent,
-    UserComponent
+    UserComponent,
+    TemplateComponent
     
   ],
   imports: [

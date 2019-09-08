@@ -15,4 +15,13 @@ export class UploadImageService {
       .post(endpoint, formData);
   }
 
+  postFile1(fileToUpload: File) {
+    const endpoint = 'http://localhost:8000/api/partenaires';
+    const formData: FormData = new FormData();
+    formData.append('Image', fileToUpload, fileToUpload.name);
+    
+    return this.http
+      .post(endpoint, formData);
+  }
+
 }

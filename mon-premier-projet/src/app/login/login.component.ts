@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +18,12 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData)
       .subscribe(
         res => {
+          Swal.fire('BIENVENUE VOUS ETES BIEN CONNECTEZ!!!')
           console.log(res.token)
         //localStorage.setItem('access_token',res.access_token)
       this._auth.saveToken(res.token);
+      this.router.navigate(['/register'])
+    
         },
 
         //err => console.log(err)

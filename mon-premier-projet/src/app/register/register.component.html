@@ -1,80 +1,81 @@
+<app-template></app-template>
 <div class="row pt-5">
-      <div class="col-md-6 mx-auto">
-          <div class="card rounded-0">
-            <div class="card-header">
-              <h3 class="mb-0">register</h3>
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">AJOUT UTILISATEURS</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" #imageForm=ngForm
+          (ngSubmit)="OnSubmit(username,password,nom,prenom,mail,adresse,statut,ninea,profil,imageName,tel)">
+          <div class="row">
+            <div class="col">
+              <label for="">username</label>
+              <input type="text" ngModel #username name="username" class="form-control" placeholder="username">
             </div>
-            <div class="card-bady">
-                
-              <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(username,password,nom,prenom,mail,adresse,statut,ninea,profil,imageName,tel)">
-                <div class="row">
-                  <div class="col">
-                      <label for="">username</label>
-                    <input type="text"  ngModel #username name="username" class="form-control" placeholder="username">
-                  </div>
-                  <div class="col">
-                      <label for="">password</label>
-                    <input type="text" name="password" ngModel #password class="form-control" placeholder="password">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                      <label for="">nom</label>
-                    <input type="text" ngModel #nom name="nom" class="form-control" placeholder="nom">
-                  </div>
-                  <div class="col">
-                      <label for="">prenom</label>
-                    <input type="text" name="prenom" ngModel #prenom class="form-control" placeholder="prenom">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                      <label for="">mail</label>
-                    <input type="text" name="mail" ngModel #mail class="form-control" placeholder="mail">
-                  </div>
-                  <div class="col">
-                      <label for="">adresse</label>
-                    <input type="text" name="adresse" ngModel #adresse class="form-control" placeholder="adresse">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                      <label for="">statut</label>
-                    <input type="text" name="statut" ngModel #statut class="form-control" placeholder="statut">
-                  </div>
-                  <div class="col">
-                      <label for="">ninea</label>
-                  <input type="text" name="ninea"ngModel #ninea class="form-control" placeholder="ninea">
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="inputGroupSelect02" ngModel #profil name="profil" required>
-                            <option value="user">user</option>
-                            <option value="caissier">caissier</option>
-                            <option value="admin">admin</option>
-                        </select>
-                        <div class="input-group-append">
-                            <label class="input-group-text" for="inputGroupSelect02">Profile</label>
-                        </div>
-                    </div>
-
-                    
-                      <img [src]="imageUrl" style="width:250px;height:200px">
-                      <input type="file" name="imageName" #imageName accept="image/*" (change)="handleFileInput($event.target.files)">
-                    
-
-                  </div>
-                  <div class="row">
-                      <div class="col">
-                          <label for="">tel</label>
-                      <input type="number" name="tel" #tel class="form-control" placeholder="tel">
-                      </div>
-                  </div>
-                  <br>
-                  <button type="submit" class="btn btn-primary">ajouter</button>
-              </form>
+            <div class="col">
+              <label for="">password</label>
+              <input type="text" name="password" ngModel #password class="form-control" placeholder="password">
             </div>
           </div>
+          <div class="row">
+            <div class="col">
+              <label for="">nom</label>
+              <input type="text" ngModel #nom name="nom" class="form-control" placeholder="nom">
+            </div>
+            <div class="col">
+              <label for="">prenom</label>
+              <input type="text" name="prenom" ngModel #prenom class="form-control" placeholder="prenom">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="">mail</label>
+              <input type="text" name="mail" ngModel #mail class="form-control" placeholder="mail">
+            </div>
+            <div class="col">
+              <label for="">adresse</label>
+              <input type="text" name="adresse" ngModel #adresse class="form-control" placeholder="adresse">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                <label for="">tel</label>
+                <input type="number" name="tel" #tel class="form-control" placeholder="tel">
+              </div>
+            
+            <div class="col">
+              <label for="">ninea</label>
+              <input type="text" name="ninea" ngModel #ninea class="form-control" placeholder="ninea">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
+                <label for="">profil</label>
+              <select class="custom-select" id="inputGroupSelect02" ngModel #profil name="profil" required>
+                <option value="user">user</option>
+                <option value="caissier">caissier</option>
+                <option value="admin">admin</option>
+              </select>
+            </div>
+            <div class="col">
+                <label for="">statut</label>
+              <select class="custom-select" id="inputGroupSelect02" ngModel #statut name="statut" required>
+                <option value="bloquer">bloquer</option>
+                <option value="debloquer">debloquer</option>
+              </select>
+            </div>
+            <div class="col">
+            <img [src]="imageUrl" style="width:300px;height:80px">
+            <input type="file" name="imageName" #imageName accept="image/*"
+              (change)="handleFileInput($event.target.files)">
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary">ajouter</button>
+
+        </form>
       </div>
+    </div>
+  </div>
 </div>
