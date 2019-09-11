@@ -1,0 +1,27 @@
+<app-template></app-template>
+<table class="table">
+  <thead>
+      <th scope="col">montant</th>
+      <th scope="col">dateTransaction</th>
+      <th scope="col">commitSystem</th>
+      <th scope="col">commiEtat</th>
+      <th scope="col">commiEnvoie</th>
+      <th scope="col">commiRetrait</th>
+      <th scope="col">code</th>
+      <th scope="col">frais</th>
+   
+  </thead>
+  <tbody >
+        <tr *ngFor ="let transaction of transactions">
+          <td>{{transaction.montant}}</td>
+          <td>{{transaction.date}}</td>
+          <td>{{transaction.commiSystem}}</td>
+          <td>{{transaction.commiEtat}}</td>
+          <td>{{transaction.commiEnvoie}}</td>
+          <td>{{transaction.commiRetrait}}</td>
+          <td>{{transaction.code}}</td>
+          <td>{{transaction.frais}}</td>
+
+      </tr>
+  </tbody>
+</table> 

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData)
       .subscribe(
         res => {
-          Swal.fire('BIENVENUE VOUS ETES BIEN CONNECTEZ!!!')
+          Swal.fire('connexion reussie !!!')
           console.log(res.token)
         //localStorage.setItem('access_token',res.access_token)
       this._auth.saveToken(res.token);

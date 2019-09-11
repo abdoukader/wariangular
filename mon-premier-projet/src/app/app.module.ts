@@ -15,6 +15,11 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
 import { AjoutPartenaireService} from './ajout-partenaire.service';
 import { TemplateComponent } from './template/template.component';
+import { EnvoieComponent } from './envoie/envoie.component';
+import { RetraitComponent } from './retrait/retrait.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { CompteComponent } from './compte/compte.component';
+import { DepotComponent } from './depot/depot.component';
 
 
 // import { Interceptor } from './interceptor';
@@ -28,7 +33,12 @@ import { TemplateComponent } from './template/template.component';
     LoginComponent,
     PartenaireComponent,
     UserComponent,
-    TemplateComponent
+    TemplateComponent,
+    EnvoieComponent,
+    RetraitComponent,
+    TransactionComponent,
+    CompteComponent,
+    DepotComponent
     
   ],
   imports: [

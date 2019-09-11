@@ -3,7 +3,7 @@
   <div class="col-md-6 mx-auto">
     <div class="card rounded-0">
       <div class="card-header">
-        <h3 class="mb-0">AJOUT UTILISATEURS</h3>
+        <h3 class="mb-0">AJOUTER PARTENAIRE</h3>
       </div>
       <div class="card-body">
         <form class="form" #imageForm=ngForm
@@ -91,12 +91,12 @@
         <th scope="col">mail</th>
     </thead>
     <tbody >
-          <tr *ngFor ="let user of users">
-            <td>{{user.nom}}</td>
-            <td>{{user.ninea}}</td>
-            <td>{{user.adresse}}</td>
-            <td>{{user.tel}}</td>
-            <td>{{user.mail}}</td>
+          <tr *ngFor ="let partenaires of partenaire">
+            <td>{{partenaires.nom}}</td>
+            <td>{{partenaires.ninea}}</td>
+            <td>{{partenaires.adresse}}</td>
+            <td>{{partenaires.tel}}</td>
+            <td>{{partenaires.mail}}</td>
 
         </tr>
     </tbody>

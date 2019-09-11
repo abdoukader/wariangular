@@ -5,6 +5,9 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { PartenaireComponent} from './partenaire/partenaire.component';
 import { TemplateComponent } from './template/template.component';
+import { EnvoieComponent} from './envoie/envoie.component';
+import { RetraitComponent } from './retrait/retrait.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   {
@@ -32,6 +35,19 @@ const routes: Routes = [
   {
     path: 'partenaire',
     component: PartenaireComponent
+  },
+  
+  {
+    path: 'transaction',
+    component: TransactionComponent
+  },
+  {
+    path: 'envoie',
+    component: EnvoieComponent
+  },
+  {
+    path: 'retrait',
+    component: RetraitComponent
   }
 
 ];

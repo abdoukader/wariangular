@@ -1,0 +1,20 @@
+<app-template></app-template>
+<table class="table">
+    <thead>
+        <th scope="col">nom</th>
+        <th scope="col">ninea</th>
+        <th scope="col">adresse</th>
+        <th scope="col">tel</th>
+        <th scope="col">mail</th>
+    </thead>
+    <tbody >
+          <tr *ngFor ="let partenaires of partenaire">
+            <td>{{partenaires.nom}}</td>
+            <td>{{partenaires.ninea}}</td>
+            <td>{{partenaires.adresse}}</td>
+            <td>{{partenaires.tel}}</td>
+            <td>{{partenaires.mail}}</td>
+
+        </tr>
+    </tbody>
+  </table> 

@@ -1,0 +1,41 @@
+<app-template></app-template>
+<div class="col-lg-12">
+    <div class="card">
+      <div class=" d-flex align-items-center">
+        <h4>RETIRER</h4>
+      </div>
+      <div class="card-body text-center">
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">RETRAIT D'ARGENT </button>
+        <!-- Modal-->
+        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+          <div role="document" class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">formulaire de retrait d'argent</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <p>tiak tiak transfert d'argent la voie sure et efficace</p>
+                <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(cni,code)">
+                  <div class="form-group">       
+                    <label>n carte d'didentité</label>
+                    <input type="number" name="cni" ngModel #cni placeholder="numero CNI" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>code de la transaction</label>
+                    <input type="number" name="code" ngModel #code placeholder="Code transaction" class="form-control">
+                  </div>
+                  <div class="form-group">       
+                    <button type="submit" class="btn btn-primary">RETIRER</button>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary">FERMER</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { ListeService } from '../liste.service';
 import { AjoutPartenaireService } from '../ajout-partenaire.service';
 import { AuthService } from '../auth.service';
+import { PartenaireService } from '../partenaire.service';
+import { Partenaire } from './model/partenaire';
+
 
 @Component({
   selector: 'app-partenaire',
@@ -15,12 +18,12 @@ export class PartenaireComponent implements OnInit {
   imageUrl: string = "/assets/wari.jpeg";
   fileToUpload: File = null;
 
-  constructor(private _auth1: ListeService,private _auth: AuthService, private ajoutPartService: AjoutPartenaireService ,private _router: Router) { }
+  constructor(private bs: PartenaireService,private _auth1: ListeService,private _auth: AuthService, private ajoutPartService: AjoutPartenaireService ,private _router: Router) { }
 
   ngOnInit() {
      
-    this._auth1.getPartenaire()
-    .subscribe(res =>  {
+    this.bs.getPartenaire()
+    .subscribe((res:Partenaire[]) =>  {
         this.partenaire = res
         console.log(res)
       },
