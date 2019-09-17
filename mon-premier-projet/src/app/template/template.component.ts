@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-template',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
   }
 
+  isSuperAdmin(){
+    return this.auth.isSuperAdmin();
+  }
+
+  isAdmin(){
+    return this.auth.isAdmin();
+  }
+  isUser(){
+    return this.auth.isUser();
+  }
+  isCaissier(){
+    return this.auth.isCaissier();
+  }
+  isAuthentification(){
+    return this.auth.isAuthentification();
+  }
 }

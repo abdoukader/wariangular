@@ -1,5 +1,5 @@
- <!-- Side Navbar -->
- <nav class="side-navbar">
+<!-- Side Navbar -->
+<nav class="side-navbar">
   <div class="side-navbar-wrapper">
     <!-- Sidebar Header    -->
     <div class="sidenav-header d-flex align-items-center justify-content-center">
@@ -14,29 +14,11 @@
     <div class="main-menu">
       <h5 class="sidenav-heading">Main</h5>
       <ul id="side-main-menu" class="side-menu list-unstyled">                  
-        <li *ngIf="isAdmin()"><a href="/listeuser"> <i class="icon-home"></i>LISTE</a></li>
-        <li *ngIf="isCaissier()">
-          <a routerLink="/depot" routerLinkActive="active"> <i class="icon-form"></i>DEPOT</a>
-        </li>
-        <li *ngIf="isSuperAdmin()"><a href="#"> <i class="fa fa-bar-chart"></i>CREER COMPTE</a></li>
-        <li *ngIf="isSuperAdmin()"><a href="#"> <i class="icon-grid"></i>LISTE DES COMPTES</a></li>
-        <li *ngIf="isSuperAdmin()"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>PARTENAIRE </a>
+        <li><a href="/listeuser"> <i class="icon-home"></i>LISTE</a></li>
+        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>PARTENAIRE </a>
           <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
             <li><a href="/partenaire">ajouter partenaire</a></li>
             <li><a href="/listepartenaire">ListerPartenaire</a></li>
-          </ul>
-        </li>
-        <li *ngIf="isAdmin()"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>USERS</a>
-          <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-            <li><a href="/register">ajouter Users</a></li>
-            <li><a href="/listeuser">Lister Users</a></li>
-          </ul>
-        </li>
-        <li *ngIf="isUser()"><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>TRANSACTIONS</a>
-          <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-            <li *ngIf="isUser()"><a href="/envoie">Envoie</a></li>
-            <li *ngIf="isUser()"><a href="/retrait">Retrait</a></li>
-            <li *ngIf="isUser()"><a href="/transaction">liste transaction</a></li>
           </ul>
         </li>
         <li><a href="/login"> <i class="icon-interface-windows"></i>Logout</a></li>
@@ -94,4 +76,66 @@
       </div>
     </nav>
   </header>
+</div>
+
+
+<div id="temp">
+<mat-form-field style="margin-top:40px;padding-top:20px;">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+  <div style="margin-top:40px;padding-top:20px;" class="mat-elevation-z8">
+
+    <table style="margin:0px;padding:0px;width:100%;margging:50%;" mat-table [dataSource]="dataSource" matSort>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>username </th>
+        <td mat-cell *matCellDef="let row"> {{row.username}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="roles">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> roles </th>
+        <td mat-cell *matCellDef="let row"> {{row.roles}} </td>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nom </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.nom}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> prenom </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.prenom}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> tel </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.tel}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > mail </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.mail}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="statut">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> statut </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.statut}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> adresse </th>
+        <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.adresse}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
 </div>

@@ -8,6 +8,8 @@ import { TemplateComponent } from './template/template.component';
 import { EnvoieComponent} from './envoie/envoie.component';
 import { RetraitComponent } from './retrait/retrait.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { DepotComponent } from './depot/depot.component';
+import { ListeusersComponent } from './listeusers/listeusers.component';
 
 const routes: Routes = [
   {
@@ -48,6 +50,14 @@ const routes: Routes = [
   {
     path: 'retrait',
     component: RetraitComponent
+  },
+  {
+    path: 'depot',
+    component: DepotComponent
+  },
+  {
+    path: 'listeuser',
+    component: ListeusersComponent
   }
 
 ];

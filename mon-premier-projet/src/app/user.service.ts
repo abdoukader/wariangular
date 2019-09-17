@@ -7,9 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-
+  private _UserUrl = 'http://127.0.0.1:8000/api/listerU';
   constructor(private http: HttpClient) { }
   headers = {headers: new HttpHeaders().set("authorization", "Bearer "+ localStorage.getItem('access_token'))};
+  
+  getUser():Observable<any>{
+    return this.http.get<any>(this._UserUrl,this.headers);
+  }
   
   postFile(
       username:string,
@@ -42,10 +46,11 @@ export class UserService {
     return this.http.post(endpoint, formData,this.headers);
   }
 
-  monitor(id){
+  // monitor(id){
 
-    const   _bloquerUser= 'http://localhost:8000/api/bloquer/'+id;
+  //   const   _bloquerUser= 'http://localhost:8000/api/bloquer/'+id;
   
-      return this.http.get(_bloquerUser) 
-    }
+  //     return this.http.get(_bloquerUser) 
+  //   }
+  
 }

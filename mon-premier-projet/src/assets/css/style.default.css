@@ -97,8 +97,7 @@ table {
   transition: width 0.3s linear;
   width: calc(100% - 200px);
   background-color: #F4F7FA;
-  min-height: 100vh;
-  padding-bottom: 50px;
+  
 }
 
 .page.active {
@@ -1392,7 +1391,6 @@ input.input-material ~ label {
 
 input.input-material ~ label.active {
   font-size: 0.8rem;
-  top: -10px;
   color: #33b35a;
 }
 

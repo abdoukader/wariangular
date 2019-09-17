@@ -3,8 +3,8 @@ export interface Transaction{
     date:string;
     commiSystem:string;
     commiEtat:string;
-    commiEnvoie:string;
-    commiRetrait:string;
+    commitEnvoie:string;
+    commitRetrait:string;
     code:string;
     frais:string;
 }

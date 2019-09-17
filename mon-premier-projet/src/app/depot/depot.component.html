@@ -1,22 +1,23 @@
 <app-template></app-template>
-<div class="col-lg-6">
+
+<div class="col-lg-10">
   <div class="card">
     <div class="card-header d-flex align-items-center">
       <h4>DEPOT</h4>
     </div>
     <div class="card-body">
       <p>TiakTiak Transfert le moyen sure et efficace</p>
-      <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(numcompte,somme)">
+      <form class="form" #imageForm=ngForm >
         <div class="form-group">
           <label>NUEMRO COMPTE</label>
-          <input type="number" ngModel #numcompte name="numcompte" placeholder="numero compte" class="form-control">
+          <input type="text"   name="numcompte" placeholder="numero compte" class="form-control" [(ngModel)]="log.numcompte">
         </div>
         <div class="form-group">       
           <label>montant</label>
-          <input type="number" ngModel #somme name="somme" placeholder="montant" class="form-control">
+          <input type="number" name="somme" placeholder="montant" class="form-control" [(ngModel)]="log.somme">
         </div>
         <div class="form-group">       
-          <input type="submit" value="Signin" class="btn btn-primary">
+          <button type="submit" (click)="OnSubmit()" class="btn btn-primary">deposer</button>
         </div>
       </form>
     </div>

@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class UserlisteService {
 
-  private _UserUrl = 'http://127.0.0.1:8000/api/listerUser';
+  private _UserUrl = 'http://127.0.0.1:8000/api/listerU';
   constructor(private http: HttpClient) { }
   private headers= new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('access_token'));
-  getUser():Observable<any>{
-    return this.http.get<any>(this._UserUrl, {headers: this.headers});
-  }
+  // getUser():Observable<any>{
+  //   return this.http.get<any>(this._UserUrl, {headers: this.headers});
+  // }
 
 }
 

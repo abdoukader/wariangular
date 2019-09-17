@@ -13,7 +13,7 @@ export class TransactionService {
 
   
   getTransaction() {
-    return this.http.get<any>(this.transactionUrl);
+    return this.http.get<any>(this.transactionUrl,this.header);
   }
 
 }

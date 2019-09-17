@@ -20,6 +20,9 @@ import { RetraitComponent } from './retrait/retrait.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { CompteComponent } from './compte/compte.component';
 import { DepotComponent } from './depot/depot.component';
+import { ListeusersComponent } from './listeusers/listeusers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 
 // import { Interceptor } from './interceptor';
@@ -38,7 +41,8 @@ import { DepotComponent } from './depot/depot.component';
     RetraitComponent,
     TransactionComponent,
     CompteComponent,
-    DepotComponent
+    DepotComponent,
+    ListeusersComponent
     
   ],
   imports: [
@@ -46,6 +50,7 @@ import { DepotComponent } from './depot/depot.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    MaterialModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: function  tokenGetter() {
@@ -53,7 +58,8 @@ import { DepotComponent } from './depot/depot.component';
         whitelistedDomains: ['localhost:8000'],
         blacklistedRoutes: ['http://localhost:8000/api/login']
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [AuthService,UserService,AjoutPartenaireService,
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }

@@ -4,6 +4,7 @@ export interface User{
     nom:string;
     prenom:string;
     tel:string;
+    mail:string;
     statut:string;
     adresse:string;
 }
